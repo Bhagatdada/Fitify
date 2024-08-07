@@ -1,0 +1,71 @@
+.name {
+    background-color: rgb(212, 208, 208);
+    color: black;
+    font-size: 20px;
+    font-family: consolas;
+    padding-bottom: 50px;
+    padding-left: 10px;
+    padding-top: 10px;
+    border-radius: 10px;
+
+}
+
+#headi {
+    padding-top: 30px;
+    color: rgb(253, 253, 253);
+    background-color: #535ba0;
+    float: none;
+
+    border-radius: 10px;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding-left: 5%;
+    padding-right: 5%;
+    font-family: consolas;
+
+    padding-bottom: 5%;
+
+
+
+
+}
+
+input[type="text"]:focus {
+    outline: none;
+    box-shadow: 0px 0px 5px #61C5FA;
+    border: 1px solid #5AB0DB;
+    border-radius: 5px;
+    transition: all 2s;
+}
+
+input[type="text"]:hover {
+    border: 1px solid rgb(255, 138, 138);
+    border-radius: 5px;
+}
+
+input[type="text"]:focus:hover {
+    outline: none;
+    box-shadow: 0px 0px 5px #61C5FA;
+    border: 1px solid #5AB0DB;
+    border-radius: 5px;
+}
+
+
+#bumton {
+    color: white;
+    background-color: darkgreen;
+    border: none;
+    height: 40px;
+    width: 120px;
+    border-radius: 10px;
+    transition: all 1s;
+}
+#bumton:hover {
+    box-shadow: 0px 0px 8px #10ffdf;
+    background-color: rgb(78, 181, 50);
+}
+
+::selection {
+    background-color: rgb(212, 208, 208);
+    color: rgb(212, 208, 208);
+}

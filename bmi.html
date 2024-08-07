@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/main_2.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon_io/site.webmanifest">
+    
+    <title>B.M.I. Calculator</title>
+
+    <style type="text/css">
+        body {
+            margin: 0;
+        }
+
+        #res {
+            margin-top: 5px;
+            color: white;
+            font-size: large;
+        }
+        #gfg2 {
+            color: rgb(23, 244, 251);
+        }
+    </style>
+
+    <link rel="stylesheet" href="assets/css/bmi.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Titan+One&display=swap" rel="stylesheet">
+    <script>
+        function calc() {
+            const num1 = document.getElementById("firstNumber").value;
+            const num2 = document.getElementById("secondNumber").value;
+            let k = num1 / (num2 * num2);
+            let rounded = k.toFixed(1);
+            document.getElementById("result").innerHTML = rounded;
+
+            if (rounded >= 1 && rounded <= 18.5) {
+                document.getElementById("gfg2").innerHTML = "YOUR BMI IS " + rounded + " YOU ARE IN UNDERWEIGHT RANGE <br> Eat more frequently <br> Choose nutrient-rich foods <br> Try smoothies and shakes <br> Watch when you drink <br>";
+            }
+            if (rounded >= 18.5 && rounded <= 24.9) {
+                document.getElementById("gfg2").innerHTML = "YOUR BMI IS " + rounded + " YOU ARE IN HEALTHY WEIGHT RANGE <br><br> Maintaining a healthy weight may reduce the risk of chronic diseases associated with overweight and obesity.";
+            }
+            if (rounded >= 25 && rounded <= 29.9) {
+                document.getElementById("gfg2").innerHTML = "YOUR BMI IS " + rounded + " YOU ARE IN OVERWEIGHT RANGE <br> Choosing healthier foods (whole grains, fruits and vegetables, healthy fats and protein sources) and beverages <br> Limiting unhealthy foods (refined grains and sweets, potatoes, red meat, processed meat) and beverages (sugary drinks) <br> Increasing physical activity <br> Limiting television time, screen time, and other “sit time” <br> Improving sleep <br> Reducing stress";
+            }
+            if (rounded >= 30) {
+                document.getElementById("gfg2").innerHTML = "YOUR BMI IS " + rounded + " YOU ARE IN OBESE RANGE <br> Healthy eating plan and regular physical activity <br> Changing your habits <br> Weight-management programs <br> Weight-loss medicines <br> Weight-loss devices";
+            }
+        }
+    </script>
+</head>
+<body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+                <!-- Header -->
+                <header id="header">
+                    <div class="logo">
+                        <a href="index.html" style="font-family: 'Caveat', cursive; text-transform: lowercase;"><i>Fitify</i></a>
+                    </div>
+                </header>
+
+                <!-- BMI Calculator Section -->
+                <section>
+                    <div id="headi">
+                        <h1 id="helmo">BMI CALCULATOR</h1>
+                        <div class="name">
+                            <p>SELECT YOUR GENDER:</p>
+                            <div id="group"></div>
+                            <p id="output"></p>
+                            <script>
+                                const sizes = ['Male', 'Female'];
+
+                                // generate the radio groups        
+                                const group = document.querySelector("#group");
+                                group.innerHTML = sizes.map((size) => `<div>
+                                    <input type="radio" name="size" value="${size}" id="${size}">
+                                    <label for="${size}">${size}</label>
+                                </div>`).join(' ');
+
+                                // add an event listener for the change event
+                                const radioButtons = document.querySelectorAll('input[name="size"]');
+                                for (const radioButton of radioButtons) {
+                                    radioButton.addEventListener('change', showSelected);
+                                }
+
+                                function showSelected(e) {
+                                    console.log(e);
+                                    if (this.checked) {
+                                        document.querySelector('#output').innerText = `You selected ${this.value}`;
+                                    }
+                                }
+                            </script>
+
+                            Enter Weight (Kgs): <input type="text" id="firstNumber" /><br>
+                            <br>
+                            Enter Height (mtr): <input type="text" id="secondNumber" /><br>
+                            <br>
+                            <input type="button" onClick="calc()" Value="Calculate" id="bumton" />
+                        </div>
+                        <p id = "res">YOUR BMI IS: <br>
+                            <span id="result"></span>
+                        </p>
+                        <p id="gfg2"></p>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+                <!-- Search Box -->
+                <section id="search" class="alt"></section>
+
+                <!-- Menu -->
+                <nav id="menu">
+                    <ul>
+                        <li><a href="index.html">Homepage</a></li>
+                        <li><a href="flatstomach.html">Flat stomach</a></li>
+                        <li><a href="thighworkout.html">Thigh workout</a></li>
+                        <li><a href="split.html">Split training</a></li>
+                        <li><a href="tonedarms.html">Toned arms</a></li>
+                        <li><a href="fullbody.html">Full body workout</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="bmi.html">BMI Calculator</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Featured Posts -->
+                <div class="featured-posts">
+                    <div class="heading">
+                        <h2>Featured Posts</h2>
+                    </div>
+                    <div class="owl-carousel owl-theme">
+                        <a href="https://www.medicalnewstoday.com/articles/286745" target="_blank">
+                            <div class="featured-item">
+                                <img src="assets/images/post1.webp" alt="featured one">
+                                <p>Yoga is a mind and body practice. Various styles of yoga combine physical postures, breathing techniques, and meditation or relaxation.</p>
+                            </div>
+                        </a>
+                        <a href="https://www.samhealth.org.sg/understanding-mental-health/what-is-mental-wellness/#:~:text=Mental%20wellness%20is%20a%20positive,you%20lead%20a%20fulfilling%20life." target="_blank">
+                            <div class="featured-item">
+                                <img src="assets/images/post2.png" alt="featured two">
+                                <p>Being mentally well means that your mind is in order and functioning in your best interest. You are able to think, feel and act in ways that create a positive impact on your physical and social well-being.</p>
+                            </div>
+                        </a>
+                        <a href="https://www.sleepfoundation.org/how-sleep-works/why-do-we-need-sleep" target="_blank">
+                            <div class="featured-item">
+                                <img src="assets/images/post3.jpg" alt="featured three">
+                                <p>Sleep is an essential function that allows your body and mind to recharge, leaving you refreshed and alert when you wake up. Healthy sleep also helps the body remain healthy and stave off diseases.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/transition.js"></script>
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/custom.js"></script>
+</body>
+</html>

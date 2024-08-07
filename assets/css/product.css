@@ -1,0 +1,32 @@
+.container {
+    background-color: #DFF6FF;
+}
+.row {
+    
+}
+.section-title h3 {
+    font-size: 2em;
+    font-weight: 1000;
+}
+
+.col-lg-3 col-md-4 col-sm-6 {
+    border: solid;
+    border-color: black;
+}
+.product__item__text {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: 400;
+    font-family: "Montserrat", sans-serif;
+}
+.product__item__text h6 a {
+    color: black;
+    font-weight: 750;
+    font-size: 1.25em;
+}
+.product__price h6 a {
+    color: black;
+    font-size: 1.25em;
+    font-weight: 500;
+}
